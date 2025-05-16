@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>語法分析（Syntax Analysis）</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f4; color: #333; }
+        header { background-color: #007bff; padding: 20px; color: white; text-align: center; }
+        main { margin-top: 20px; }
+        section { margin: 30px 0; padding: 20px; background-color: white; border-radius: 8px; }
+        .mindmap-container { display: flex; justify-content: center; margin: 20px 0; }
+        .mindmap-container svg { border: 2px solid #007bff; border-radius: 8px; background: white; max-width: 900px; width: 100%; min-width: 600px; min-height: 400px; height: auto; display: block; }
+        .mermaid .primary { fill: #007bff !important; color: white !important; font-weight: bold; }
+        .mermaid .secondary { fill: #0056b3 !important; color: white !important; }
+        a { color: #007bff; }
+    </style>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>語法分析（Syntax Analysis）</h1>
+        <a href="index.html">← 回首頁</a>
+    </header>
+    <main>
+        <section>
+            <h2>語法分析思維導圖</h2>
+            <div class="mindmap-container">
+                <pre class="mermaid">
+graph TD
+  Syntax["Syntax Analysis"] --> Parsing["Parsing"]
+  Syntax --> ParseTree["Parse Tree"]
+  Syntax --> Grammar["Grammar"]
+  Syntax --> ErrorRecovery["Error Recovery"]
+  Syntax --> Ambiguity["Ambiguity"]
+  Parsing --> TopDown["Top-Down Parsing"]
+  Parsing --> BottomUp["Bottom-Up Parsing"]
+  TopDown --> LL["LL Parser"]
+  BottomUp --> LR["LR Parser"]
+  classDef primary fill:#007bff,stroke:#007bff,color:white,font-weight:bold;
+  classDef secondary fill:#0056b3,stroke:#0056b3,color:white;
+  class Syntax primary
+  class Parsing,ParseTree,Grammar,ErrorRecovery,Ambiguity secondary
+
+  click Parsing "#" "Parsing"
+  click ParseTree "#" "Parse Tree"
+  click Grammar "#" "Grammar"
+  click ErrorRecovery "#" "Error Recovery"
+  click Ambiguity "#" "Ambiguity"
+                </pre>
+            </div>
+        </section>
+        <section>
+            <h2>簡介</h2>
+            <p>語法分析負責將記號序列組成語法樹，檢查程式結構是否符合語法規則。</p>
+        </section>
+        <section>
+            <h2>細分概念</h2>
+            <ul>
+                <li><strong>Parsing：</strong> 解析記號序列，建立語法樹。</li>
+                <li><strong>語法樹：</strong> 程式結構的樹狀表示。</li>
+                <li><strong>文法：</strong> 定義語言結構的規則。</li>
+                <li><strong>錯誤復原：</strong> 處理語法錯誤並繼續分析。</li>
+                <li><strong>二義性：</strong> 文法可能產生多種解析方式。</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>編譯器六大核心模組架構 - 語法分析</p>
+        <p>&copy; 2025 Compiler Mindmap Project</p>
+    </footer>
+</body>
+</html>

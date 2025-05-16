@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>編譯器導覽</title>
+    <style>
+        .mermaid .primary {
+          fill: #007bff !important;
+          color: white !important;
+          font-weight: bold;
+        }
+        .mermaid .secondary {
+          fill: #0056b3 !important;
+          color: white !important;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        main {
+            margin-top: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            background-color: #0056b3;
+            border-radius: 4px;
+        }
+        section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .mindmap-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .mindmap-container svg {
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            background: white;
+            max-width: 900px;
+            width: 100%;
+            min-width: 600px;
+            min-height: 400px;
+            height: auto;
+            display: block;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        form label {
+            font-weight: bold;
+        }
+        form input, form textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+</head>
+<body>
+    <header>
+        <h1>編譯器導覽</h1>
+        <nav>
+            <ul>
+                <li><a href="lexical.html">詞法分析</a></li>
+                <li><a href="syntax.html">語法分析</a></li>
+                <li><a href="semantic.html">語意分析</a></li>
+                <li><a href="intermediate.html">中間碼生成</a></li>
+                <li><a href="optimization.html">最佳化</a></li>
+                <li><a href="codegen.html">程式碼生成</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="mindmap">
+            <h2>網站導覽</h2>
+<div class="mindmap-container">
+  <pre class="mermaid">
+    graph TB
+      Compiler["Compiler"] --> Lexical["Lexical Analysis"]
+      Compiler --> Syntax["Syntax Analysis"]
+      Compiler --> Semantic["Semantic Analysis"]
+      Compiler --> Intermediate["Intermediate Code"]
+      Compiler --> Optimization["Optimization"]
+      Compiler --> CodeGeneration["Code Generation"]
+      classDef primary fill:#007bff,stroke:#007bff,color:white,font-weight:bold;
+      classDef secondary fill:#0056b3,stroke:#0056b3,color:white;
+      class Compiler primary
+      class Lexical,Syntax,Semantic,Intermediate,Optimization,CodeGeneration secondary
+
+      click Lexical "lexical.html" "詞法分析"
+      click Syntax "syntax.html" "語法分析"
+      click Semantic "semantic.html" "語意分析"
+      click Intermediate "intermediate.html" "中間碼生成"
+      click Optimization "optimization.html" "最佳化"
+      click CodeGeneration "codegen.html" "程式碼生成"
+  </pre>
+</div>
+        </section>
+        
+        
+        
+    </main>
+    <footer id="compiler-info">
+        <p>編譯器六大核心模組架構</p>
+        <p>&copy; 2025 Compiler Mindmap Project</p>
+    </footer>
+</body>
+</html>

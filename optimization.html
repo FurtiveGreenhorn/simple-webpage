@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最佳化（Optimization）</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f4; color: #333; }
+        header { background-color: #007bff; padding: 20px; color: white; text-align: center; }
+        main { margin-top: 20px; }
+        section { margin: 30px 0; padding: 20px; background-color: white; border-radius: 8px; }
+        .mindmap-container { display: flex; justify-content: center; margin: 20px 0; }
+        .mindmap-container svg { border: 2px solid #007bff; border-radius: 8px; background: white; max-width: 900px; width: 100%; min-width: 600px; min-height: 400px; height: auto; display: block; }
+        .mermaid .primary { fill: #007bff !important; color: white !important; font-weight: bold; }
+        .mermaid .secondary { fill: #0056b3 !important; color: white !important; }
+        a { color: #007bff; }
+    </style>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>最佳化（Optimization）</h1>
+        <a href="index.html">← 回首頁</a>
+    </header>
+    <main>
+        <section>
+            <h2>最佳化思維導圖</h2>
+            <div class="mindmap-container">
+                <pre class="mermaid">
+graph TD
+  Optimization["Optimization"] --> LocalOpt["Local Optimization"]
+  Optimization --> GlobalOpt["Global Optimization"]
+  Optimization --> LoopOpt["Loop Optimization"]
+  Optimization --> Inline["Inlining"]
+  Optimization --> DeadCode["Dead Code Elimination"]
+  LocalOpt --> ConstantFold["Constant Folding"]
+  LocalOpt --> StrengthRed["Strength Reduction"]
+  GlobalOpt --> CommonSub["Common Subexpression"]
+  LoopOpt --> LoopUnroll["Loop Unrolling"]
+  classDef primary fill:#007bff,stroke:#007bff,color:white,font-weight:bold;
+  classDef secondary fill:#0056b3,stroke:#0056b3,color:white;
+  class Optimization primary
+  class LocalOpt,GlobalOpt,LoopOpt,Inline,DeadCode secondary
+
+  click LocalOpt "#" "Local Optimization"
+  click GlobalOpt "#" "Global Optimization"
+  click LoopOpt "#" "Loop Optimization"
+  click Inline "#" "Inlining"
+  click DeadCode "#" "Dead Code Elimination"
+                </pre>
+            </div>
+        </section>
+        <section>
+            <h2>簡介</h2>
+            <p>最佳化階段提升程式效能，減少資源消耗，包含區域、全域、迴圈等多種最佳化技術。</p>
+        </section>
+        <section>
+            <h2>細分概念</h2>
+            <ul>
+                <li><strong>區域最佳化：</strong> 只在單一基本區塊內進行。</li>
+                <li><strong>全域最佳化：</strong> 跨多個基本區塊。</li>
+                <li><strong>迴圈最佳化：</strong> 提升迴圈效率。</li>
+                <li><strong>內聯展開：</strong> 將函式內容直接插入呼叫處。</li>
+                <li><strong>死碼消除：</strong> 移除不會執行的程式碼。</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>編譯器六大核心模組架構 - 最佳化</p>
+        <p>&copy; 2025 Compiler Mindmap Project</p>
+    </footer>
+</body>
+</html>

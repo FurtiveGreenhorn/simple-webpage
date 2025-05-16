@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>語意分析（Semantic Analysis）</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f4; color: #333; }
+        header { background-color: #007bff; padding: 20px; color: white; text-align: center; }
+        main { margin-top: 20px; }
+        section { margin: 30px 0; padding: 20px; background-color: white; border-radius: 8px; }
+        .mindmap-container { display: flex; justify-content: center; margin: 20px 0; }
+        .mindmap-container svg { border: 2px solid #007bff; border-radius: 8px; background: white; max-width: 900px; width: 100%; min-width: 600px; min-height: 400px; height: auto; display: block; }
+        .mermaid .primary { fill: #007bff !important; color: white !important; font-weight: bold; }
+        .mermaid .secondary { fill: #0056b3 !important; color: white !important; }
+        a { color: #007bff; }
+    </style>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>語意分析（Semantic Analysis）</h1>
+        <a href="index.html">← 回首頁</a>
+    </header>
+    <main>
+        <section>
+            <h2>語意分析思維導圖</h2>
+            <div class="mindmap-container">
+                <pre class="mermaid">
+graph TD
+  Semantic["Semantic Analysis"] --> TypeCheck["Type Checking"]
+  Semantic --> Scope["Scope Analysis"]
+  Semantic --> SymbolTable["Symbol Table"]
+  Semantic --> ConstEval["Constant Evaluation"]
+  Semantic --> ErrorDetect["Error Detection"]
+  TypeCheck --> ImplicitCast["Implicit Cast"]
+  TypeCheck --> TypeInference["Type Inference"]
+  Scope --> BlockScope["Block Scope"]
+  Scope --> FunctionScope["Function Scope"]
+  classDef primary fill:#007bff,stroke:#007bff,color:white,font-weight:bold;
+  classDef secondary fill:#0056b3,stroke:#0056b3,color:white;
+  class Semantic primary
+  class TypeCheck,Scope,SymbolTable,ConstEval,ErrorDetect secondary
+
+  click TypeCheck "#" "Type Checking"
+  click Scope "#" "Scope Analysis"
+  click SymbolTable "#" "Symbol Table"
+  click ConstEval "#" "Constant Evaluation"
+  click ErrorDetect "#" "Error Detection"
+                </pre>
+            </div>
+        </section>
+        <section>
+            <h2>簡介</h2>
+            <p>語意分析檢查語法樹的語意正確性，例如型別、作用域、常數運算等。</p>
+        </section>
+        <section>
+            <h2>細分概念</h2>
+            <ul>
+                <li><strong>型別檢查：</strong> 檢查運算元與運算子的型別是否相容。</li>
+                <li><strong>作用域分析：</strong> 變數與函式的可見範圍。</li>
+                <li><strong>符號表：</strong> 管理識別符號的資訊。</li>
+                <li><strong>常數運算：</strong> 編譯期間可計算的表達式。</li>
+                <li><strong>錯誤偵測：</strong> 發現語意錯誤。</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>編譯器六大核心模組架構 - 語意分析</p>
+        <p>&copy; 2025 Compiler Mindmap Project</p>
+    </footer>
+</body>
+</html>
